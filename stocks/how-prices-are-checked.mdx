@@ -1,0 +1,14 @@
+---
+title: "How prices are checked"
+description: "Why a purchase cannot be made at a bad price."
+---
+
+<Note>
+  This page is a short outline for now. The full guide is being written.
+</Note>
+
+Every purchase is checked against a reference price that is not the trading pool's price at that moment.
+
+- The router sets a floor under the reference price. A purchase that cannot meet it is cancelled and your USDC stays.
+- The reference is the stock's Chainlink price feed. An old feed (for example over a weekend) makes the stock unavailable until it updates.
+- Nothing is bought while the Base sequencer is down or has just come back.

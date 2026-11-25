@@ -1,72 +1,106 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "OwnFlow",
+  "description": "Turn every payment into ownership. OwnFlow turns USDC revenue into tokenized stock ownership on Base.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#404E3B",
+    "light": "#7B9669",
+    "dark": "#333F2F"
   },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
+  "appearance": {
+    "default": "light",
+    "strict": false
+  },
+  "background": {
+    "color": {
+      "light": "#F4F6F3",
+      "dark": "#1A1C1C"
     }
   },
+  "fonts": {
+    "heading": {
+      "family": "Inter",
+      "weight": 700
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
+  },
+  "favicon": "/favicon.png",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/mark.png",
+    "dark": "/logo/mark.png",
+    "href": "/"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get started",
+        "icon": "rocket",
+        "pages": ["index", "quickstart", "how-it-works"]
+      },
+      {
+        "group": "Core concepts",
+        "icon": "diagram-project",
+        "pages": [
+          "concepts/vault",
+          "concepts/payment-split",
+          "concepts/stock-baskets",
+          "concepts/earn",
+          "concepts/running-costs",
+          "concepts/fees"
+        ]
+      },
+      {
+        "group": "Using OwnFlow",
+        "icon": "book-open",
+        "pages": [
+          "guides/create-a-vault",
+          "guides/set-your-rules",
+          "guides/make-an-agent",
+          "guides/get-paid",
+          "guides/sell-and-withdraw",
+          "guides/reports"
+        ]
+      },
+      {
+        "group": "Agents",
+        "icon": "robot",
+        "pages": ["agents/templates", "agents/pricing-and-payments", "agents/gateway"]
+      },
+      {
+        "group": "Stocks and prices",
+        "icon": "chart-line",
+        "pages": ["stocks/supported-stocks", "stocks/how-prices-are-checked"]
+      },
+      {
+        "group": "Safety",
+        "icon": "shield-halved",
+        "pages": ["safety/guarantees", "safety/pauses-and-kill-switch", "safety/risks", "safety/disclosures"]
+      },
+      {
+        "group": "Resources",
+        "icon": "circle-question",
+        "pages": ["resources/faq", "resources/glossary", "resources/networks-and-contracts"]
+      }
+    ]
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:support@mintlify.com"
+        "label": "GitHub",
+        "href": "https://github.com/TheOwnflow"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
+    ]
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
+    "options": ["copy", "view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/TheOwnflow"
     }
   }
 }

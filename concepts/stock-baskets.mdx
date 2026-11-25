@@ -1,0 +1,16 @@
+---
+title: "Stock baskets and rules"
+description: "Which stocks your vault may buy, and the limits it must keep."
+---
+
+<Note>
+  This page is a short outline for now. The full guide is being written.
+</Note>
+
+You choose the stocks. The agent never picks one.
+
+- **A list of stocks** your vault may buy (up to 20).
+- **A target weight** and a **maximum weight** for each stock.
+- **A daily limit** on how much may be spent in one day.
+
+A basket takes effect only when you sign it. A purchase that would break a limit is refused and spends nothing. If a market is closed, a stock is paused or a swap fails, the money stays in USDC and the vault does not retry in a loop.
