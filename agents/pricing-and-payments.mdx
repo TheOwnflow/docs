@@ -1,10 +1,44 @@
 ---
 title: "Pricing and payments"
-description: "How an agent is priced and paid with x402."
+description: "How callers pay your agent with x402."
 ---
 
-<Note>
-  This page is a short outline for now. The full guide is being written.
-</Note>
+## What you set
 
-An agent answers a request with its price. The caller pays in USDC with x402 and gets the result. The payment lands in the owner's vault.
+A price per call between **0.001 and 5 USDC**. A new price applies to new calls.
+
+For an agent on OwnFlow's AI models, the AI cost is paid from your running costs, **not** taken from the price. Check the performance card to compare your price with the cost.
+
+## What happens in a paid call
+
+```mermaid
+sequenceDiagram
+  participant C as Caller
+  participant A as Your agent
+  participant V as Your vault
+  C->>A: Request
+  A->>C: Payment required, with the price and your vault
+  C->>A: Same request with a signed payment
+  A->>A: Check the payment, then do the work
+  A->>V: Settle the payment only if the work succeeded
+  A->>C: The answer
+```
+
+- The caller **signs** a payment. It costs them no gas.
+- The money moves **only if the work succeeds**.
+- The payee is always **your vault**, fixed when the agent is created.
+- A request that could never succeed (for example a wrong input) is refused before any payment is asked.
+
+## Call an agent from code
+
+Your agent's page shows its address and a ready example. A first request without payment answers with the price:
+
+```bash
+curl -i "YOUR_API_ADDRESS/a/your-agent?ticker=XYZ"
+```
+
+The answer has status **402** with the payment requirements. An x402 client signs the payment and sends the request again with the payment header.
+
+## Try it in the browser
+
+Each agent's public page lets you pay with your wallet. OwnFlow's page refuses to ask you to sign unless the request pays that agent's vault, in USDC on the right network, for no more than the price shown.

@@ -1,15 +1,38 @@
 ---
 title: "What OwnFlow can never do"
-description: "The rules your vault enforces."
+description: "The rules your vault enforces by itself."
 ---
 
-<Note>
-  This page is a short outline for now. The full guide is being written.
-</Note>
+These rules are in the smart contract, not just in the website.
 
-- The agent cannot withdraw your money, change your rules or your stock list, or send money anywhere except as your rules allow.
-- The agent can only spend the stock bucket on purchases, never what is yours to withdraw.
+## Your agent can never
+
+- withdraw your money or your stock,
+- sell your stock,
+- change your split, your stock list or your settings,
+- spend anything except the stock bucket on purchases,
+- buy a stock you did not approve, or go past your maximum weight or daily limit,
+- send your Earn money anywhere except the approved vault,
+- bill more than your running costs bucket holds, or more than the daily limit, or the same cost twice.
+
+## OwnFlow can never
+
+- withdraw your money or your stock,
+- change your split, your stock list or your settings,
+- stop you from withdrawing, selling or leaving.
+
+## What OwnFlow can do, and what you trust it for
+
+- **Stop agent actions** for everyone in an emergency.
+- Bill your agents' AI cost from your running costs, within the limits above. The cost figure comes from OwnFlow's records.
+- Choose the trading pools and price sources the trading router uses. This decides what a purchase or a sale is checked against.
+- Approve which Earn vaults and trading routers may be used, and set the defaults for **new** vaults.
+- Set a deposit limit for vaults.
+
+If a trading router is withdrawn, vaults that use it stop buying and selling through it. Your money and stock stay yours and you can withdraw them.
+
+## Everything adds up
+
 - Every split adds up to exactly 100%.
-- Your running costs are yours: the agent can only bill its real cost, within daily limits.
 - A purchase that breaks a rule is refused and spends nothing.
-- Every movement of money is an event, so everything reconciles.
+- Every movement of money is recorded as an event, so your report can be checked.

@@ -1,10 +1,71 @@
 ---
 title: "FAQ"
-description: "Short answers to common questions."
+description: "Answers to common questions."
 ---
 
-<Note>
-  This page is a short outline for now. The full guide is being written.
-</Note>
+## Getting started
 
-Questions and answers will be collected here as people ask them.
+<AccordionGroup>
+  <Accordion title="Do I need to know about crypto to use OwnFlow?">
+    You can log in with email or Google. OwnFlow creates a wallet for you, and you do not need ETH to create your vault.
+  </Accordion>
+  <Accordion title="Is there a real money version?">
+    Not yet. OwnFlow runs on a test network today. The Base mainnet launch has not happened.
+  </Accordion>
+  <Accordion title="Where do I get test USDC?">
+    On the Base test network, from the Circle faucet. The app links to it.
+  </Accordion>
+</AccordionGroup>
+
+## Payments and splits
+
+<AccordionGroup>
+  <Accordion title="My payment arrived but was not split. Why?">
+    A split happens once at least 1.00 USDC is waiting, usually within a few minutes. It does not happen while your vault or the platform is paused. You can click **Split it now** on your pay page.
+  </Accordion>
+  <Accordion title="Why did I pay a fee on money I added myself?">
+    Every USDC your vault splits has the fee, including your own deposits. Moving money between your own buckets has no fee.
+  </Accordion>
+</AccordionGroup>
+
+## Stocks
+
+<AccordionGroup>
+  <Accordion title="Why was nothing bought?">
+    Look in **Activity**. Common reasons: less than 1.00 USDC available, today's limit reached, a maximum weight, or a stock that is unavailable right now. Also check that your vault is not paused.
+  </Accordion>
+  <Accordion title="Does OwnFlow choose which stocks to buy?">
+    No. Your agent buys only the stocks you approved, toward the targets you set.
+  </Accordion>
+  <Accordion title="Can I sell only part of a stock?">
+    Yes. Use the slider on **Sell** or **Withdraw**.
+  </Accordion>
+</AccordionGroup>
+
+## Agents
+
+<AccordionGroup>
+  <Accordion title="Why can I not publish my agent?">
+    You need a passing test from the last 30 minutes. An agent on OwnFlow's AI models also needs running costs that can pay for a call. Add money, wait a few seconds and try again.
+  </Accordion>
+  <Accordion title="My free test runs are used up.">
+    They come back the next day (UTC).
+  </Accordion>
+  <Accordion title="My agent shows Off: running costs.">
+    Add money to your running costs on **Funds**.
+  </Accordion>
+  <Accordion title="Is a caller charged if my agent fails?">
+    No. The payment is settled only after a successful result.
+  </Accordion>
+</AccordionGroup>
+
+## Wallets
+
+<AccordionGroup>
+  <Accordion title="I logged in and my vault is gone.">
+    You are probably using a different login or wallet. A vault belongs to one wallet. Log in the way you did when you created it.
+  </Accordion>
+  <Accordion title="My wallet asks me to pay gas.">
+    Free gas may be unavailable for a moment, or the action is a transfer from your own wallet, which always needs gas.
+  </Accordion>
+</AccordionGroup>

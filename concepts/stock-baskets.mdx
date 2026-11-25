@@ -1,16 +1,50 @@
 ---
 title: "Stock baskets and rules"
-description: "Which stocks your vault may buy, and the limits it must keep."
+description: "Which stocks your agent may buy, and the limits it must keep."
 ---
 
-<Note>
-  This page is a short outline for now. The full guide is being written.
-</Note>
+You choose the stocks. Your agent never picks one.
 
-You choose the stocks. The agent never picks one.
+## What a basket contains
 
-- **A list of stocks** your vault may buy (up to 20).
-- **A target weight** and a **maximum weight** for each stock.
-- **A daily limit** on how much may be spent in one day.
+| Setting | Meaning |
+|---|---|
+| Stocks | The only stocks your agent may buy (up to 20) |
+| Target weight | The share you want each stock to reach. Targets add up to 100%. |
+| Maximum weight | The most a stock may be of your stock side |
+| Daily limit | The most that can be spent on stocks in one day |
 
-A basket takes effect only when you sign it. A purchase that would break a limit is refused and spends nothing. If a market is closed, a stock is paused or a swap fails, the money stays in USDC and the vault does not retry in a loop.
+A basket takes effect **only when you sign it**.
+
+## What "weight" means
+
+Your **stock side** is the value of the stocks you hold plus the USDC still waiting in the stock bucket. A stock's weight is its value as a share of that total. A purchase that would push a stock above its maximum weight is refused.
+
+**Example.** Your stock side is 100.00 USDC and Apple's maximum is 60%. A purchase that would make Apple 67% of the stock side is refused and nothing is spent.
+
+## How your agent buys
+
+- It looks at which stocks are furthest below their targets and buys those first.
+- It spends only the stock bucket, never your withdrawals, running costs or Earn.
+- It buys amounts of at least 1.00 USDC.
+- It stays under your daily limit. A day is counted in UTC.
+- If a stock is unavailable, its share stays in USDC for later.
+
+## Why a purchase is refused
+
+| Reason in Activity | What it means |
+|---|---|
+| Not in your basket | You did not approve this stock |
+| Daily limit | Today's limit is used up |
+| Maximum weight | The stock would go over its maximum |
+| Not enough in the stock bucket | The bucket cannot pay for it |
+| Token paused | The issuer paused the token |
+| Unavailable | The stock cannot be traded safely right now |
+| Price moved | The price moved more than allowed |
+| Swap failed | The trade did not go through |
+
+A refused purchase spends nothing. Your agent waits an hour before it tries that stock again.
+
+<Warning>
+  With a daily limit of **0**, nothing can be bought.
+</Warning>

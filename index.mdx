@@ -3,30 +3,60 @@ title: "OwnFlow"
 description: "Turn every payment into ownership."
 ---
 
-OwnFlow turns the money your AI agents and your business earn into **tokenized stock ownership on Base**. A payment arrives in USDC, OwnFlow splits it by rules you set, and your own vault buys the stocks you chose.
+OwnFlow helps you turn the money your AI agents and your business earn into **tokenized stock you own on Base**. A payment arrives in USDC, your own vault splits it by rules you set, and your agent buys the stocks you chose, within the limits you set.
 
 <Note>
-  Everything here is a **rule-based purchase** that you set up and approve. OwnFlow does not pick stocks and does not give investment advice.
+  Every purchase is a **rule-based purchase** that you set up and approve. OwnFlow does not pick stocks and does not give investment advice. Tokenized stocks are not available to US persons.
 </Note>
 
-## How a payment becomes ownership
+## What you can do
 
-1. **A customer pays your agent** in USDC (x402).
-2. **Your vault splits it** into the platform fee, running costs, stock, Earn and what is yours to withdraw.
-3. **Your agent buys the stocks you chose**, inside the limits you set.
-4. **Everything is reported** and reconciles to the exact unit.
+<CardGroup cols={2}>
+  <Card title="Get paid" icon="coins" href="/guides/get-paid">
+    Publish an agent, or share your pay link. Payments land in your own vault.
+  </Card>
+  <Card title="Split every payment" icon="chart-pie" href="/concepts/payment-split">
+    Decide how much goes to running costs, stocks, Earn and your own balance.
+  </Card>
+  <Card title="Own stock automatically" icon="chart-line" href="/concepts/stock-baskets">
+    Choose your stocks and limits once. Your agent buys within them.
+  </Card>
+  <Card title="Take it out any time" icon="arrow-up-from-bracket" href="/guides/sell-and-withdraw">
+    Withdraw, sell a share, or take everything out in one step.
+  </Card>
+</CardGroup>
+
+## A payment in 100 USDC
+
+With the starting split, a payment of 100.00 USDC is divided like this:
+
+| Part | Share | Amount |
+|---|---|---|
+| Platform fee | 1% | 1.00 USDC |
+| Running costs (yours, for your agents' AI costs) | 5% | 5.00 USDC |
+| Stock (rule-based purchases) | 50% | 50.00 USDC |
+| Earn (lent into an approved vault) | 20% | 20.00 USDC |
+| Yours to withdraw | 24% | 24.00 USDC |
+
+You can change every part except the fee.
+
+## Start here
 
 <CardGroup cols={2}>
   <Card title="Quickstart" icon="rocket" href="/quickstart">
-    Create a vault and get your first agent paid.
+    Create your vault and receive your first payment.
   </Card>
   <Card title="How it works" icon="diagram-project" href="/how-it-works">
-    The whole flow in one page.
+    The whole journey of a payment, step by step.
   </Card>
   <Card title="Safety" icon="shield-halved" href="/safety/guarantees">
     What OwnFlow can never do with your money.
   </Card>
-  <Card title="Supported stocks" icon="chart-line" href="/stocks/supported-stocks">
-    Which stocks you can own, and how their price is checked.
+  <Card title="Risks" icon="triangle-exclamation" href="/safety/risks">
+    Read this before you put real money in.
   </Card>
 </CardGroup>
+
+<Warning>
+  OwnFlow runs on a **test network** today. The stock tokens there are **disclosed simulations** (mock tokens with the real tickers) and have no value. The Base mainnet launch has not happened yet.
+</Warning>

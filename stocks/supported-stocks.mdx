@@ -3,22 +3,28 @@ title: "Supported stocks"
 description: "The stocks you can own through OwnFlow."
 ---
 
-<Note>
-  This page is a short outline for now. The full guide is being written.
-</Note>
+OwnFlow starts with the tokenized stocks that have a **Chainlink price feed**, so every purchase can be checked against a price that is not the trading pool's own.
 
-OwnFlow starts with the tokenized stocks that have a Chainlink price feed, so every purchase can be checked against a price that is not the trading pool's own.
-
-| | | |
-|---|---|---|
-| AAPL | MSFT | NVDA |
-| GOOGL | AMZN | META |
-| TSLA | MSTR | CRCL |
-| INTC | SNDK | SPCX |
-| ANT | | |
+| Ticker | Company | Ticker | Company |
+|---|---|---|---|
+| AAPL | Apple | META | Meta Platforms |
+| MSFT | Microsoft | TSLA | Tesla |
+| NVDA | NVIDIA | MSTR | Strategy |
+| GOOGL | Alphabet | CRCL | Circle |
+| AMZN | Amazon | INTC | Intel |
+| SNDK | Sandisk | SPCX | SpaceX |
+| ANT | Anthropic | | |
 
 More stocks are added one by one, once each has a safe price source.
 
+## What a stock token is
+
+A stock token is an onchain certificate that gives you **economic exposure** to shares through its issuer. It is not the same as holding the share with a broker. Dividends are generally reinvested by the issuer, which changes what each token represents.
+
 <Warning>
-  SPCX and ANT are tokens for private companies. Their price feeds are reference values, not live market prices.
+  Tokenized stocks are not available to US persons. An issuer can pause or restrict a token. Availability can differ between networks, and a stock can show **Unavailable** at times.
 </Warning>
+
+## On the test network
+
+The tokens are **disclosed simulations**: mock tokens with real tickers at fixed example prices. They have no value. One of them is set as unavailable on purpose, so you can see how a refusal looks.

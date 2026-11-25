@@ -3,12 +3,30 @@ title: "How prices are checked"
 description: "Why a purchase cannot be made at a bad price."
 ---
 
+A trading pool's price can be pushed around for a moment. OwnFlow therefore checks every purchase and sale against a **reference price** that is not just the pool's price at that moment.
+
+## The checks
+
+<Steps>
+  <Step title="A reference price">
+    For the stocks OwnFlow starts with, the reference is the stock's Chainlink price feed.
+  </Step>
+  <Step title="A floor">
+    The trade must return at least the reference amount, less the pool fee and a small allowance. Otherwise it is cancelled.
+  </Step>
+  <Step title="A fresh price">
+    If the price feed is too old, the stock is unavailable until it updates. This can happen when the stock market is closed, such as over a weekend.
+  </Step>
+  <Step title="A healthy network">
+    No trade happens while the Base network sequencer is down, or for an hour after it comes back.
+  </Step>
+</Steps>
+
+## What you notice
+
+- A stock can be **Unavailable** for a while. Your money stays in USDC and the purchase happens later.
+- A sale can be refused if the market price is below what the check allows. Try again later, or withdraw the tokens.
+
 <Note>
-  This page is a short outline for now. The full guide is being written.
+  These checks reduce the risk of a bad price. They do not remove market risk.
 </Note>
-
-Every purchase is checked against a reference price that is not the trading pool's price at that moment.
-
-- The router sets a floor under the reference price. A purchase that cannot meet it is cancelled and your USDC stays.
-- The reference is the stock's Chainlink price feed. An old feed (for example over a weekend) makes the stock unavailable until it updates.
-- Nothing is bought while the Base sequencer is down or has just come back.

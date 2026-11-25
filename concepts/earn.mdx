@@ -1,16 +1,31 @@
 ---
 title: "Earn"
-description: "A part of each payment that is lent into an approved vault."
+description: "A share of each payment that is lent into an approved vault."
 ---
 
-<Note>
-  This page is a short outline for now. The full guide is being written.
-</Note>
-
-The Earn share is set aside and your agent can lend it into a vault that the platform approved (a Morpho USDC vault on Base). The agent can only put money in. Only you can take it out.
+The **Earn** part of your split is set aside, then lent by your agent into a USDC lending vault (a Morpho vault on Base) that has been approved for OwnFlow.
 
 <Warning>
-  Yield varies and is not guaranteed. OwnFlow never shows a fixed return.
+  Yield varies and is **not guaranteed**. A position can also be worth less than you put in. OwnFlow never shows a fixed return.
 </Warning>
 
-If the Earn vault is unavailable, the money stays idle and you can move it to what is yours to withdraw at any time.
+## How it works
+
+<Steps>
+  <Step title="Set aside">
+    When a payment is split, the Earn share is kept in your vault.
+  </Step>
+  <Step title="Lent">
+    Your agent lends it once at least 1.00 USDC is set aside. It can only put money **into** the approved vault.
+  </Step>
+  <Step title="You take it out">
+    On **Funds**, the Earn card lets you withdraw part or all of your position to your wallet.
+  </Step>
+</Steps>
+
+## Good to know
+
+- If the Earn vault is unavailable or full, the money stays idle in your vault. You can move it to what you can withdraw.
+- You can withdraw from Earn at any time, even while your vault is paused. A lending vault may not have enough free money at a given moment. In that case try again later.
+- The card shows what is lent now, what is set aside, and what you earned so far. That number can be negative.
+- On the test network the Earn vault is a **disclosed simulation**.

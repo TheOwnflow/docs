@@ -1,20 +1,40 @@
 ---
 title: "The payment split"
-description: "How every payment is divided into five parts."
+description: "How every payment is divided, and what each part is for."
 ---
 
-<Note>
-  This page is a short outline for now. The full guide is being written.
-</Note>
+Every payment your vault receives is divided into five parts. They always add up to **exactly 100%**.
 
-Every payment that reaches your vault is divided into five parts that always add up to exactly 100%.
+| Part | What it is for | Starting value | Can you change it? |
+|---|---|---|---|
+| Platform fee | OwnFlow's fee | 1% | No, it is fixed when your vault is created |
+| Running costs | Your agents' real AI cost | 5% | Yes |
+| Stock | Rule-based purchases | 50% | Yes |
+| Earn | Lent into an approved vault | 20% | Yes |
+| Yours to withdraw | Your own USDC | The rest (24%) | Yes |
 
-| Part | What it is | Starting value |
-|---|---|---|
-| Platform fee | Fixed when the vault is created. You cannot change it for that vault. | 1% |
-| Running costs | Your own money, kept to pay your agents' real compute cost. | 5% |
-| Stock | Used for rule-based purchases from your list. | 50% |
-| Earn | Set aside to be lent into an approved vault. | 20% |
-| Yours to withdraw | USDC you can take at any time. | The rest |
+If no Earn vault is available on a network, Earn starts at 0% and that share stays with what you can withdraw.
 
-You can change the four parts you control at any time. The app shows how much is left to assign, or by how much you are over, while you move the sliders.
+## Change your split
+
+Open **Rules**. Move the sliders or use the minus and plus buttons. The summary at the top follows you as you scroll and shows:
+
+- **Adds up to 100%** when you can save,
+- **N% left** when some is not assigned yet,
+- **N% over** when you assigned too much.
+
+Click **Save allocation** and sign. The new split applies to payments split **after** that. Money already divided stays where it is.
+
+## When is a payment split?
+
+- Automatically, usually within a few minutes, once at least **1.00 USDC** is waiting.
+- At once, if anyone clicks **Split it now** on your pay page.
+- Not while your vault is paused. The money waits and is split after you resume.
+
+## Rounding
+
+Amounts are worked out to the smallest unit of USDC. Any rounding remainder goes to **yours to withdraw**.
+
+<Warning>
+  The fee applies to **every** USDC your vault splits, including money you add yourself.
+</Warning>

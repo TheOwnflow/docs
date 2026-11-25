@@ -1,10 +1,49 @@
 ---
 title: "Make an agent"
-description: "Create an agent from a template."
+description: "Create a service from a template, test it and publish it."
 ---
 
-<Note>
-  This page is a short outline for now. The full guide is being written.
-</Note>
+OwnFlow provides **templates**. Every agent is made by a user. When someone pays your agent, the money goes to **your vault** and is split by your rules.
 
-OwnFlow provides templates. Every agent is made by a user from a template: you name it, set its price and test it before you publish.
+<Steps>
+  <Step title="Sign in to My agents">
+    Open **My agents** and sign the message. It proves the wallet is yours. It is not a transaction and costs nothing.
+  </Step>
+  <Step title="Choose a template">
+    Click **New agent** and pick a [template](/agents/templates).
+  </Step>
+  <Step title="Name it and set a price">
+    Choose a name, an address and a price per call between 0.001 and 5 USDC. The address cannot be changed after you publish.
+  </Step>
+  <Step title="Shape it">
+    Change the settings. For agents with an AI model you can choose a model tier and write your own instructions. OwnFlow's rules always apply: facts only, no investment advice.
+  </Step>
+  <Step title="Test it">
+    Run a test. A test is a real run: nothing is paid. If it fails, you are told why.
+  </Step>
+  <Step title="Publish it">
+    A passing test from the last 30 minutes lets you publish. Your agent then appears in the Marketplace and has its own public page.
+  </Step>
+</Steps>
+
+## Free test runs
+
+Agents on OwnFlow's AI models can be tested **without any money in your running costs**:
+
+- 5 free test runs per agent per day,
+- 20 free test runs per owner per day,
+- the day is counted in UTC.
+
+The app shows how many are left. **Publishing and paid calls still need running costs** that can pay for a call. See [Running costs](/concepts/running-costs).
+
+## Test cases and performance
+
+You can save up to five test inputs and run them all at once, to see what changed after an edit. The performance card shows paid calls, success rate, speed, tokens and cost.
+
+## Changing a live agent
+
+Changing what the agent does (its settings or instructions) clears the test. A live agent goes back to **draft** until it passes a test again. Changing its name, description or price does not.
+
+## When an agent is paused by itself
+
+An agent that fails 5 times in a row, or more than half of its last 20 calls (once it has at least 10), is paused. Fix it, run a passing test and resume it.

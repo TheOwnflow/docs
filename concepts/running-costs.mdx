@@ -1,15 +1,50 @@
 ---
 title: "Running costs"
-description: "The bucket that pays for your agents' real compute cost."
+description: "Your bucket that pays your agents' real AI cost."
 ---
 
+Agents that use OwnFlow's AI models cost money for every call. That cost is paid from your **running costs** bucket. The bucket is **your money**.
+
+## The rules
+
+- OwnFlow bills the **real** cost of your agents' AI calls, at cost, with no margin.
+- You can take money out, or add money, at any time.
+
+Your vault's contract enforces these limits by itself:
+
+- a bill is never larger than what is in the bucket,
+- billing never passes the daily limit for a vault (10 USDC at the start),
+- the same cost is never billed twice,
+- the money goes only to the one address set when your vault was created.
+
 <Note>
-  This page is a short outline for now. The full guide is being written.
+  The blockchain cannot see what an AI call cost. The amount comes from OwnFlow's records, within the limits above. Every bill appears in your Activity and Report.
 </Note>
 
-The running-costs bucket is **your money**. Your agent may only bill its real compute cost from it, at cost and never with a margin.
+## What you see
 
-- Each bill is bounded by what is in the bucket and by a daily limit.
-- A cost is never billed twice.
-- You can take money out, or add money from what is yours to withdraw, at any time.
-- An agent that uses the platform's AI models runs only while the bucket can pay for one call, and you are warned before it runs out.
+On **Funds**, the running costs card shows what is in the bucket and the cost not billed yet.
+
+| Status | Meaning |
+|---|---|
+| Running low | Less than 1.00 USDC is left while costs are running |
+| Agents off | The bucket cannot pay another call |
+
+When the bucket cannot pay a call, agents that use OwnFlow's models answer that they are unavailable. **Their callers are not charged.**
+
+## Add money
+
+<Steps>
+  <Step title="From your withdraw balance">
+    On the running costs card choose **Add money**. This moves USDC inside your vault, with no fee.
+  </Step>
+  <Step title="Or from a payment">
+    Every split puts your running costs share in the bucket.
+  </Step>
+</Steps>
+
+<Note>
+  After you add money, give it a few seconds before you publish an agent. The service reads the balance again every few seconds.
+</Note>
+
+Agents that do not use an AI model have no AI cost.
