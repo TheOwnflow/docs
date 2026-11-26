@@ -3,41 +3,55 @@ title: "Quickstart"
 description: "Create your vault, receive a payment and see your first stock purchase."
 ---
 
-This guide takes you from nothing to a first rule-based purchase on the test network.
-
 ## Before you start
 
-- A way to log in: **email**, **Google**, or a wallet such as Base Account, Coinbase Wallet, MetaMask or a WalletConnect wallet.
-- Test USDC. The app links to the [Circle faucet](https://faucet.circle.com) for the Base test network.
-- If you will send USDC **from your own wallet** (for example to your vault), a very small amount of test ETH on Base for gas. Creating a vault and changing your settings do not need it. See [Wallets and gas](/concepts/wallets-and-gas).
+- A login: **email**, **Google**, or a wallet such as Base Account, Coinbase Wallet, MetaMask or a WalletConnect wallet.
+- **USDC on Base**. USDC on another network does not reach your vault.
+- A little **ETH on Base**, only if you send USDC from your own wallet.
 
 ## Steps
 
 <Steps>
   <Step title="Log in">
-    Click **Log in** and choose email, Google or your wallet. If you use email or Google, OwnFlow creates a wallet for you. That wallet is yours.
+    Click **Log in**. With email or Google, OwnFlow creates a wallet for you. That wallet is yours.
   </Step>
   <Step title="Choose your split">
-    The setup page starts with 20% running costs, 50% stock, 20% Earn and the rest for you to withdraw. Move the sliders until the total is exactly 100%. The page shows how much is **left** or how much you are **over**.
+    The page starts with 20% running costs, 50% stock, 20% Earn and 9% yours to withdraw, plus the 1% fee. Move the sliders until the total is exactly 100%.
   </Step>
   <Step title="Choose your stocks">
-    Search and tick the stocks you want. The page starts with a few chosen. Set a **daily limit**: the most your agent may spend on stocks in one day (it starts at 100 USDC).
+    Tick up to 20 stocks and set a **daily limit**, the most your agent may spend on stocks in one day. Each stock starts with an equal target and a maximum of 60% of your stock side. A single stock has a maximum of 100%.
   </Step>
   <Step title="Create your vault">
-    Click **Create my vault** and sign. Signing is also your approval of that list of stocks. When it is ready, click **Go to the dashboard**.
+    Click **Create my vault** and sign. Signing also approves your list of stocks.
   </Step>
-  <Step title="Add some money">
-    Open **Funds** and choose **Add to vault**, or share your **Pay link**. The payment is split by your rules, usually within a few minutes. The fee applies to money you add yourself too.
+  <Step title="Add money">
+    Open **Funds** and choose **Add to vault**, or share your **Pay link**.
   </Step>
-  <Step title="Watch your first purchase">
-    Within a few minutes your agent buys your stocks within your limits. Open **Overview** to see what you own, and **Activity** to see every step.
+  <Step title="Watch it work">
+    **Overview** shows what you own. **Activity** shows every step.
   </Step>
 </Steps>
 
 <Tip>
-  Small payments wait. A split happens automatically once at least 1.00 USDC is waiting, and a purchase needs at least 0.50 USDC. You can also split at once with **Split it now** on your pay page.
+  Small amounts wait. A split needs **1.00 USDC**, each stock purchase needs **0.50 USDC**, and Earn lends from **1.00 USDC**. With the starting split and two stocks, about 5.00 USDC of payments shows all three.
 </Tip>
 
-## Next: make an agent that earns
+A wallet creates one vault, so keep access to it. With email or Google you can export your private key in **Settings**.
 
-Follow [Make an agent](/guides/make-an-agent) to publish a service that other people pay for.
+## Gas
+
+**Gas** is the network fee of a blockchain action. With email, Google or an ordinary wallet such as MetaMask, OwnFlow pays it for the actions you sign. A smart wallet, such as Base Account, handles gas on its own side.
+
+| Action | Do you need ETH? |
+|---|---|
+| Create your vault, change your rules | No |
+| Withdraw, sell, pause, take everything out | No |
+| Split a payment, add running costs from your wallet | No |
+| Pay an agent | No, you only sign |
+| Send USDC from your wallet to a vault | **Yes** |
+
+If free gas is unavailable, your wallet asks you to pay it.
+
+## Next
+
+[Make an agent](/guides/make-an-agent) that other people pay for.

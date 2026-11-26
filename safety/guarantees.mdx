@@ -1,39 +1,57 @@
 ---
-title: "What OwnFlow can never do"
-description: "The rules your vault enforces by itself."
+title: "Control and safety"
+description: "What only you can do, and what OwnFlow can do."
 ---
 
-These rules are in the smart contract, not just in the website. They describe the vault code in use today; OwnFlow can release a new version of it, [with notice](/safety/upgrades).
+These rules are in the smart contracts. They describe the vault code in use today, which can be [updated with notice](#updates-to-the-vault-code).
 
 ## Your agent can never
 
-- withdraw your money or your stock,
-- sell your stock,
-- change your split, your stock list or your settings,
-- spend anything except the stock bucket on purchases,
-- buy a stock you did not approve, or go past your maximum weight or daily limit,
-- send your Earn money anywhere except the approved vault,
-- bill more than your running costs bucket holds, or the same cost twice.
+- withdraw or sell,
+- change your split, stocks or settings,
+- spend anything but the stock part on purchases,
+- buy a stock you did not approve, or pass your limits,
+- send Earn money anywhere but the approved vault.
 
-## With today's vault code, OwnFlow can never
+## With today's code, OwnFlow can never
 
-- withdraw your money or your stock,
-- change your split, your stock list or your settings,
+- withdraw your money or stock,
+- change your split, stocks or settings,
 - stop you from withdrawing, selling or leaving.
 
-## What OwnFlow can do, and what you trust it for
+## What OwnFlow can do
 
-- **Stop agent actions** for everyone in an emergency.
-- Bill your agents' compute units from your running costs, within the limits above. The count comes from OwnFlow's records.
-- Choose the trading pools and price sources the trading router uses. This decides what a purchase or a sale is checked against.
-- Approve which Earn vaults and trading routers may be used, and set the defaults for **new** vaults.
+- Stop automatic actions for everyone in an emergency.
+- Bill compute units from your running costs, within [limits](/concepts/running-costs). The count comes from OwnFlow's records.
+- Choose the pools and price sources every trade is checked against.
+- Approve Earn vaults and trading routers, and set defaults for new vaults.
 - Set a deposit limit for vaults.
-- Release a new version of the vault code, after a waiting period, and switch every vault to [safe mode](/safety/upgrades) in an emergency.
+- Release a new version of the vault code, after a waiting period.
 
-If a trading router is withdrawn, vaults that use it stop buying and selling through it. Your money and stock stay yours and you can withdraw them.
+If a trading router is withdrawn, vaults that use it stop trading through it. You can still withdraw.
 
-## Everything adds up
+## Pauses
 
-- Every split adds up to exactly 100%.
-- A purchase that breaks a rule is refused and spends nothing.
-- Every movement of money is recorded as an event, so your report can be checked.
+| Action | Your pause | Emergency stop | Safe mode |
+|---|---|---|---|
+| Split, buy, lend, bill | Stopped | Stopped | Stopped |
+| Withdraw, sell, take everything out | Works | Works | Works |
+| Change your rules | Works | Works | Works |
+| Create a new vault | Works | Works | Stopped |
+
+- **Your pause:** **Settings** → **Pause my vault**. Choose **Resume my vault** to start again.
+- **Emergency stop:** OwnFlow stops automatic actions on every vault.
+- **Safe mode:** OwnFlow switches every vault to code that has only your own actions, for a problem in the vault code itself.
+
+Money that arrives during a pause waits in your vault.
+
+## Updates to the vault code
+
+OwnFlow can update the code your vault runs. An update does not move your money.
+
+- A new version is announced on the blockchain first.
+- It cannot reach any vault for **at least three days**.
+- The app shows the date from which it can take effect. Until then you can take everything out.
+- It reaches a few vaults first, then all of them.
+
+The waiting period is your protection. Whoever controls the release key could, after it, release code that does something else with the money in vaults. A guardian role can cancel a proposed version, but **today the same wallet holds both roles**, so it adds no second protection against a stolen key.

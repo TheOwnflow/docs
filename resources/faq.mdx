@@ -3,78 +3,44 @@ title: "FAQ"
 description: "Answers to common questions."
 ---
 
-## Getting started
-
 <AccordionGroup>
-  <Accordion title="Do I need to know about crypto to use OwnFlow?">
-    You can log in with email or Google. OwnFlow creates a wallet for you, and you do not need ETH to create your vault.
+  <Accordion title="Which USDC do I use?">
+    USDC issued by Circle on **Base**, at the address on [Contracts](/resources/networks-and-contracts).
   </Accordion>
-  <Accordion title="Is there a real money version?">
-    Not yet. OwnFlow runs on a test network today. The Base mainnet launch has not happened.
+  <Accordion title="My payment arrived but was not split.">
+    A split needs 1.00 USDC waiting and usually takes a few minutes. It does not happen during a pause. You can click **Split it now** on your pay page.
   </Accordion>
-  <Accordion title="Where do I get test USDC?">
-    On the Base test network, from the Circle faucet. The app links to it.
-  </Accordion>
-</AccordionGroup>
-
-## Payments and splits
-
-<AccordionGroup>
-  <Accordion title="My payment arrived but was not split. Why?">
-    A split happens once at least 1.00 USDC is waiting, usually within a few minutes. It does not happen while your vault or the platform is paused. You can click **Split it now** on your pay page.
-  </Accordion>
-  <Accordion title="Why did I pay a fee on money I added myself?">
-    Every USDC your vault splits has the fee, including your own deposits. Moving money between your own buckets has no fee.
-  </Accordion>
-</AccordionGroup>
-
-## Stocks
-
-<AccordionGroup>
   <Accordion title="Why was nothing bought?">
-    Look in **Activity**. Common reasons: less than 0.50 USDC available, today's limit reached, a maximum weight, or a stock that is unavailable right now. Also check that your vault is not paused.
+    Check **Activity**. Common reasons: less than 0.50 USDC for a stock (two equal stocks need 1.00 USDC), the daily limit, a maximum weight, an unavailable stock or a paused vault.
   </Accordion>
-  <Accordion title="Does OwnFlow choose which stocks to buy?">
-    No. Your agent buys only the stocks you approved, toward the targets you set.
+  <Accordion title="Why can I not buy or sell on a weekend?">
+    The reference price is too old. See [Prices and trading hours](/stocks/how-prices-are-checked). You can still withdraw the tokens.
   </Accordion>
-  <Accordion title="Can I sell only part of a stock?">
-    Yes. Use the slider on **Sell** or **Withdraw**.
+  <Accordion title="Why is my Earn deposit not in the Morpho app?">
+    Your vault made the deposit, not your wallet. See it on the Earn card, or look up your vault's address on Basescan.
   </Accordion>
-</AccordionGroup>
-
-## Agents
-
-<AccordionGroup>
   <Accordion title="Why can I not publish my agent?">
-    You need a passing test from the last 30 minutes, and running costs that can pay for a call. Add money, wait a few seconds and try again.
+    You need a passing test from the last 30 minutes, and running costs that can pay for a call.
   </Accordion>
-  <Accordion title="My free test runs are used up.">
-    They come back the next day (UTC).
+  <Accordion title="A call says the payment is pending.">
+    It was sent but not confirmed in time. Check the transaction it names before you pay again.
   </Accordion>
-  <Accordion title="My agent shows Off: running costs.">
-    Your vault cannot pay for another call. Add money to your running costs on **Funds**. Callers are not charged while an agent is off.
-  </Accordion>
-  <Accordion title="What is a compute unit (CU)?">
-    The measure of what a call uses: running it, its seconds, blockchain reads, web requests and AI models. 1,000,000 CU is 1.00 USDC. See [Running costs](/concepts/running-costs).
-  </Accordion>
-  <Accordion title="Can my own AI agent call an agent here?">
-    Yes. Open the agent in the **Marketplace** and click **Copy instructions**. Give them to your agent. It pays with x402 from its own wallet.
-  </Accordion>
-  <Accordion title="My call says the payment is pending.">
-    The payment was sent but could not be confirmed in time, so no answer was given. Check the transaction it names, or your USDC balance, before you pay again.
-  </Accordion>
-  <Accordion title="Is a caller charged if my agent fails?">
-    No. The payment is settled only after a successful result.
-  </Accordion>
-</AccordionGroup>
-
-## Wallets
-
-<AccordionGroup>
-  <Accordion title="I logged in and my vault is gone.">
-    You are probably using a different login or wallet. A vault belongs to one wallet. Log in the way you did when you created it.
+  <Accordion title="My vault is gone.">
+    A vault belongs to one wallet. Log in the same way you did when you created it.
   </Accordion>
   <Accordion title="My wallet asks me to pay gas.">
-    Free gas may be unavailable for a moment, or the action is a transfer from your own wallet, which always needs gas.
+    Free gas may be unavailable for a moment. A transfer from your own wallet always needs gas.
   </Accordion>
 </AccordionGroup>
+
+## Messages in the app
+
+| Message | Meaning |
+|---|---|
+| Your vault is paused | You paused it. Withdrawals still work. |
+| Platform-wide pause | Automatic actions are off for everyone. You can still withdraw. |
+| Safe mode | Only your own actions work |
+| A new version of the vault code | An [update](/safety/guarantees#updates-to-the-vault-code) was announced |
+| Bill due | Your running costs cannot pay a bill |
+| Agents paused | 0.50 USDC of running costs is unpaid |
+| Catching up | The records are a little behind the blockchain. Wait a moment. |

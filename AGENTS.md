@@ -38,10 +38,13 @@
 
 ## Content boundaries
 
+- Keep it minimal. State each fact on one page and link to it elsewhere. No investor material, no promises of unbuilt features.
+
 - **Never give investment advice.** Do not say a stock is good, cheap or a good buy. Describe what the rules do.
 - **Never promise a return.** Earn yield varies and is not guaranteed; never show a fixed APY.
 - Say that tokenized stocks are not available to US persons wherever availability is discussed.
-- On test networks the stocks are "disclosed simulations": say so.
+- This site documents **Base mainnet only**. Do not add test networks, local setups, mock tokens or faucets.
 - Do not document internal keys, server settings, the relayer's budget or anything that helps an attacker. Safety pages say what is guaranteed, not how to get around it.
-- Do not state contract addresses until they are final and published on the "Networks and contracts" page.
+- Contract addresses must match `deployments/8453.json` in the app repository and be checked on Base. They live on "Contracts", "Supported stocks" and "Earn"; change them together.
+- Say honestly who holds the contracts' roles. Update "Contracts", "Control and safety" and "Risks" when that changes.
 - The source of truth for how OwnFlow behaves is the app repository's `docs/claude/` folder. If this site and that folder disagree, ask which is right before publishing.

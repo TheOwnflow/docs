@@ -3,45 +3,42 @@ title: "Earn"
 description: "A share of each payment that is lent into an approved vault."
 ---
 
-The **Earn** part of your split is set aside, then lent by your agent into a USDC lending vault (a Morpho vault on Base) that has been approved for OwnFlow.
+The **Earn** part of your split is lent into a USDC lending vault on [Morpho](https://morpho.org) that has been approved for OwnFlow.
 
 <Warning>
-  Yield varies and is **not guaranteed**. A position can also be worth less than you put in. OwnFlow never shows a fixed return.
+  Yield varies and is **not guaranteed**. A position can be worth less than you put in.
 </Warning>
 
 ## How it works
 
 <Steps>
   <Step title="Set aside">
-    When a payment is split, the Earn share is kept in your vault.
+    The Earn share stays in your vault.
   </Step>
   <Step title="Lent">
-    Your agent lends it once at least 1.00 USDC is set aside. It can only put money **into** the approved vault.
+    From 1.00 USDC, your agent lends it. It can only put money **into** the approved vault.
   </Step>
-  <Step title="You take it out">
-    On **Funds**, the Earn card lets you withdraw part or all of your position to your wallet.
+  <Step title="Withdraw">
+    On **Funds**, withdraw part or all of your position to your wallet, even while your vault is paused.
   </Step>
 </Steps>
 
+The approved vault today is **Gauntlet USDC Prime**: [`0x050cE30b927Da55177A4914EC73480238BAD56f0`](https://basescan.org/address/0x050cE30b927Da55177A4914EC73480238BAD56f0). The Earn card links to its page on Morpho, with its yield, curator, fee and collateral.
+
 ## Good to know
 
-- If the Earn vault is unavailable or full, the money stays idle in your vault. You can move it to what you can withdraw.
-- You can withdraw from Earn at any time, even while your vault is paused. A lending vault may not have enough free money at a given moment. In that case try again later.
-- The card shows what is lent now, what is set aside, and what you earned so far. That number can be negative.
-- On the test network the Earn vault is a **disclosed simulation**.
+- If the lending vault is full or unavailable, the money stays idle. You can move it to what you can withdraw.
+- A lending vault may not have enough free money for a withdrawal at a given moment. Try again later.
+- The position belongs to your vault's address, so the Morpho app does not show it under your wallet.
+- Extra reward tokens from a Morpho program would be assigned to your vault. Today's vault code cannot claim them.
+- Before your first use, you accept a notice: OwnFlow's terms and [Morpho's Disclaimer](https://morpho.org/disclaimers/) apply. OwnFlow is developed and operated separately from Morpho.
 
-## Morpho
-
-Where real money is used, the Earn vaults are [Morpho](https://morpho.org) vaults, Vault V1 or V2. Each is run by its own curator. The Earn card links to the vault's page on Morpho, where you can see its yield, curator, fee and collateral.
-
-Before your first use, the app asks you to accept a notice: accessing the Morpho Protocol through OwnFlow is governed by OwnFlow's terms and [Morpho's Disclaimer](https://morpho.org/disclaimers/). OwnFlow is developed and operated separately from Morpho.
-
-### Risks
+## Risks
 
 | Risk | What it means |
-| --- | --- |
-| Smart contracts | A bug in Morpho's or OwnFlow's contracts can lose money. |
-| Market | What borrowers post as collateral can fall fast, and the loss can reach lenders. |
-| Curator | The vault's curator decides where the money is lent and can change it. |
-| Liquidity | When much of the money is borrowed, a withdrawal may have to wait. |
-| Price feeds | A wrong price from an oracle can cause a loss. |
+|---|---|
+| Smart contracts | A bug in Morpho's or OwnFlow's contracts can lose money |
+| Market | Borrowers' collateral can fall fast, and the loss can reach lenders |
+| Curator | The curator decides where the money is lent and can change it |
+| Liquidity | A withdrawal may have to wait |
+| Price feeds | A wrong oracle price can cause a loss |

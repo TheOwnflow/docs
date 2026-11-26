@@ -1,50 +1,55 @@
 ---
-title: "Stock baskets and rules"
-description: "Which stocks your agent may buy, and the limits it must keep."
+title: "Stock rules"
+description: "Which stocks your agent may buy, and the limits it keeps."
 ---
 
 You choose the stocks. Your agent never picks one.
 
-## What a basket contains
+## Your basket
 
 | Setting | Meaning |
 |---|---|
 | Stocks | The only stocks your agent may buy (up to 20) |
 | Target weight | The share you want each stock to reach. Targets add up to 100%. |
 | Maximum weight | The most a stock may be of your stock side |
-| Daily limit | The most that can be spent on stocks in one day |
+| Daily limit | The most that can be spent on stocks in one UTC day. At 0, nothing is bought. |
 
-A basket takes effect **only when you sign it**.
+Your **stock side** is the value of the stocks you hold plus the USDC waiting to buy more. A purchase that would push a stock above its maximum weight is refused.
 
-## What "weight" means
+## Change your basket
 
-Your **stock side** is the value of the stocks you hold plus the USDC still waiting in the stock bucket. A stock's weight is its value as a share of that total. A purchase that would push a stock above its maximum weight is refused.
+<Steps>
+  <Step title="Choose">
+    In **Rules**, tick your stocks and set your daily limit.
+  </Step>
+  <Step title="Set the shares">
+    Click **Next: set the shares**. **Share %** is how much of your stock money goes to a stock. **Limit %** is the share it can never be bought past.
+  </Step>
+  <Step title="Sign">
+    Click **Approve this basket**. It takes effect only after you sign.
+  </Step>
+</Steps>
 
-**Example.** Your stock side is 100.00 USDC and Apple's maximum is 60%. A purchase that would make Apple 67% of the stock side is refused and nothing is spent.
+A new basket does not sell anything. A removed stock stays in your vault until you [sell or withdraw](/guides/sell-and-withdraw) it.
 
 ## How your agent buys
 
-- It looks at which stocks are furthest below their targets and buys those first.
-- It spends only the stock bucket, never your withdrawals, running costs or Earn.
-- It buys amounts of at least 0.50 USDC.
-- It stays under your daily limit. A day is counted in UTC.
-- If a stock is unavailable, its share stays in USDC for later.
+- It buys the stocks furthest below their targets first.
+- It spends only the stock part of your vault.
+- Each purchase is at least 0.50 USDC.
+- A stock that is unavailable keeps its share in USDC for later.
 
 ## Why a purchase is refused
 
-| Reason in Activity | What it means |
+| Reason in Activity | Meaning |
 |---|---|
 | Not in your basket | You did not approve this stock |
 | Daily limit | Today's limit is used up |
 | Maximum weight | The stock would go over its maximum |
-| Not enough in the stock bucket | The bucket cannot pay for it |
+| Not enough in the stock bucket | There is not enough USDC |
 | Token paused | The issuer paused the token |
-| Unavailable | The stock cannot be traded safely right now |
+| Unavailable | The stock cannot be traded safely now |
 | Price moved | The price moved more than allowed |
 | Swap failed | The trade did not go through |
 
 A refused purchase spends nothing. Your agent waits an hour before it tries that stock again.
-
-<Warning>
-  With a daily limit of **0**, nothing can be bought.
-</Warning>

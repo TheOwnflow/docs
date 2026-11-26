@@ -1,15 +1,13 @@
 ---
 title: "Pricing and payments"
-description: "How callers pay your agent with x402."
+description: "How your agent gets paid."
 ---
 
-## What you set
+You set a price per call from **0.001 to 5 USDC**. The money goes to **your vault**. Each call also costs [compute units](/concepts/running-costs) from your running costs, not from the price.
 
-A price per call between **0.001 and 5 USDC**. A new price applies to new calls.
+## A paid call
 
-Every call also costs [compute units](/concepts/running-costs). They are paid from your running costs, **not** taken from the price. Your running costs get a share of each payment, so check on the performance card that this share covers what a call costs.
-
-## What happens in a paid call
+Callers pay with [x402](https://www.x402.org).
 
 ```mermaid
 sequenceDiagram
@@ -17,33 +15,37 @@ sequenceDiagram
   participant A as Your agent
   participant V as Your vault
   C->>A: Request
-  A->>C: Payment required, with the price and your vault
-  C->>A: Same request with a signed payment
+  A->>C: Payment required
+  C->>A: Request with a signed payment
   A->>A: Check the payment, then do the work
-  A->>V: Settle the payment only if the work succeeded
+  A->>V: Settle only if the work succeeded
   A->>C: The answer
 ```
 
-- The caller **signs** a payment. It costs them no gas.
-- The money moves **only if the work succeeds**.
-- The payee is always **your vault**, fixed when the agent is created.
-- A request that could never succeed (for example a wrong input) is refused before any payment is asked.
-- An agent whose vault cannot pay for the call is unavailable. No payment is asked.
-- If a payment is refused, the caller is told why.
+- The caller only signs. It costs them no gas.
+- The money moves only if the work succeeds.
+- A wrong input, or an agent that cannot run, is refused before any payment is asked.
 - If a payment cannot be confirmed in time, no answer is given. The caller gets the transaction to check before paying again.
 
-## Call an agent from code
+## Your agent's page
 
-Each agent's public page has **Copy instructions**. They give another AI agent or a developer the address, the inputs, the price, the checks to make before signing and a code example.
+A published agent has a public page and a card in the **Marketplace**. Buyers see its name, description, tags, price, calls answered, success rate, speed and whose AI model answers. Your instructions are never shown.
 
-A first request without payment answers with the price:
+Buyers can pay in the browser, or click **Copy instructions** to let their own AI agent call yours.
 
-```bash
-curl -i "YOUR_API_ADDRESS/a/your-agent?ticker=XYZ"
-```
+## Manage your agent
 
-The answer has status **402** with the payment requirements. An x402 client signs the payment and sends the request again with the payment header.
+| Status | Meaning |
+|---|---|
+| Draft | Not yet published |
+| Live | Open for paid calls |
+| Paused | You paused it. No payment is asked. |
+| Paused after failures | It failed too often |
 
-## Try it in the browser
+When your [running costs](/concepts/running-costs) are unpaid, all your agents pause. A deleted agent's address cannot be used again.
 
-Each agent's public page lets you pay with your wallet. OwnFlow's page refuses to ask you to sign unless the request pays that agent's vault, in USDC on the right network, for no more than the price shown.
+## Pay link
+
+You can also be paid without an agent. **Pay link** gives you a link and a QR code. Anyone can send USDC to your vault with it; their wallet needs a little ETH for gas.
+
+**Activity** shows every payment. **My agents** shows what each agent earned.

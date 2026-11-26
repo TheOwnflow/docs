@@ -1,14 +1,12 @@
 ---
-title: "How OwnFlow works"
+title: "How it works"
 description: "The journey of a payment, from a customer to a stock you own."
 ---
 
-OwnFlow has four parts that work together:
-
-- **Your vault:** your own smart contract that holds your USDC and stock. Only you can take money out.
-- **Your agents:** services you create from templates. People pay them in USDC.
-- **The worker:** an automatic helper that splits payments, buys stock and lends your Earn share, only within your rules.
-- **The report:** a record of every movement that must balance to the last unit.
+- **Your vault** is your own smart contract. It holds your USDC and stock.
+- **Your agents** are services you create from templates. People pay them in USDC.
+- **The worker** is an automatic helper that acts only within your rules.
+- **The report** records every movement.
 
 ## The journey of a payment
 
@@ -18,53 +16,51 @@ flowchart LR
   B --> C{Split by your rules}
   C --> D[Platform fee]
   C --> E[Running costs]
-  C --> F[Stock bucket]
+  C --> F[Stock]
   C --> G[Earn]
   C --> H[Yours to withdraw]
   F --> I[Rule-based purchase]
   I --> B
   G --> J[Approved Earn vault]
-  E --> K[Your agents' compute units]
 ```
 
 <Steps>
   <Step title="A payment arrives">
-    A customer calls your agent and pays in USDC, or sends USDC to your pay link. The money goes to your vault.
+    A customer pays your agent, or sends USDC to your pay link.
   </Step>
   <Step title="The vault splits it">
-    The vault divides it into five parts that add up to exactly 100%. This usually happens within a few minutes.
+    Five parts that add up to exactly 100%, usually within a few minutes.
   </Step>
   <Step title="Stocks are bought">
-    Your agent spends only the stock bucket, only on stocks you approved, never past your maximum weight or daily limit.
+    Your agent spends only the stock part, only on your stocks, within your limits.
   </Step>
   <Step title="Earn is lent">
-    The Earn share is lent into an approved vault. Yield varies and is not guaranteed.
-  </Step>
-  <Step title="Everything is recorded">
-    Each movement is an event on the blockchain. Your report checks that everything adds up.
+    The Earn part goes into an approved vault. Yield varies and is not guaranteed.
   </Step>
 </Steps>
-
-## When something cannot happen
-
-OwnFlow **fails safe**. If a market is closed, a stock is paused, a price looks wrong or a swap fails:
-
-- nothing is spent,
-- the money stays in USDC,
-- the reason appears in your **Activity**,
-- your agent waits an hour before it tries that stock again.
 
 ## Who can do what
 
 | Action | You | Your agent | OwnFlow |
 |---|---|---|---|
-| Withdraw money or stock | Yes | No | No |
-| Sell stock | Yes | No | No |
-| Change your split or stock list | Yes | No | No |
+| Withdraw or sell | Yes | No | No |
+| Change your split or stocks | Yes | No | No |
 | Split a payment | Yes (anyone can) | Yes | No |
 | Buy a stock inside your rules | No | Yes | No |
-| Lend your Earn share into an approved vault | No | Yes | No |
-| Bill your agents' compute units, within limits | No | Yes | No |
-| Stop all agents' actions in an emergency | No | No | Yes, only stop |
+| Lend into the approved Earn vault | No | Yes | No |
+| Bill running costs, within limits | No | Yes | No |
+| Stop automatic actions in an emergency | No | No | Yes |
 
-OwnFlow can stop agent actions in an emergency, but it can never stop **you** from taking your money out.
+OwnFlow can stop automatic actions, but it can never stop **you** from taking your money out.
+
+## When something cannot happen
+
+OwnFlow **fails safe**. If a stock is unavailable, a price looks wrong or a trade fails, nothing is spent. The money stays in USDC, **Activity** shows the reason, and your agent waits an hour before it tries that stock again.
+
+## Reports
+
+**Report** says **Balanced** or **Mismatch**. It checks that everything received equals the fee, running costs, stock, Earn and yours to withdraw. For your whole history it also compares the records with the blockchain.
+
+Choose a period and click **Export CSV** for your records. A report is not tax or accounting advice.
+
+The contracts behind all of this are on [Contracts](/resources/networks-and-contracts).

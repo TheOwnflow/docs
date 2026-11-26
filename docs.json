@@ -46,29 +46,15 @@
         ]
       },
       {
-        "group": "Core concepts",
-        "icon": "diagram-project",
+        "group": "Your money",
+        "icon": "wallet",
         "pages": [
-          "concepts/vault",
-          "concepts/wallets-and-gas",
           "concepts/payment-split",
           "concepts/stock-baskets",
           "concepts/earn",
           "concepts/running-costs",
-          "concepts/fees"
-        ]
-      },
-      {
-        "group": "Using OwnFlow",
-        "icon": "book-open",
-        "pages": [
-          "guides/the-app",
-          "guides/create-a-vault",
-          "guides/set-your-rules",
-          "guides/make-an-agent",
-          "guides/get-paid",
-          "guides/sell-and-withdraw",
-          "guides/reports"
+          "concepts/fees",
+          "guides/sell-and-withdraw"
         ]
       },
       {
@@ -76,12 +62,12 @@
         "icon": "robot",
         "pages": [
           "agents/templates",
-          "agents/pricing-and-payments",
-          "agents/gateway"
+          "guides/make-an-agent",
+          "agents/pricing-and-payments"
         ]
       },
       {
-        "group": "Stocks and prices",
+        "group": "Stocks",
         "icon": "chart-line",
         "pages": [
           "stocks/supported-stocks",
@@ -89,23 +75,13 @@
         ]
       },
       {
-        "group": "Safety",
+        "group": "Trust",
         "icon": "shield-halved",
         "pages": [
           "safety/guarantees",
-          "safety/pauses-and-kill-switch",
-          "safety/upgrades",
           "safety/risks",
-          "safety/disclosures"
-        ]
-      },
-      {
-        "group": "Resources",
-        "icon": "circle-question",
-        "pages": [
-          "resources/faq",
-          "resources/glossary",
-          "resources/networks-and-contracts"
+          "resources/networks-and-contracts",
+          "resources/faq"
         ]
       }
     ]
@@ -121,18 +97,62 @@
   "contextual": {
     "options": [
       "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+      "view"
     ]
   },
   "footer": {
     "socials": {
       "github": "https://github.com/TheOwnflow"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/guides/create-a-vault",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/guides/set-your-rules",
+      "destination": "/concepts/stock-baskets"
+    },
+    {
+      "source": "/guides/the-app",
+      "destination": "/resources/faq"
+    },
+    {
+      "source": "/guides/get-paid",
+      "destination": "/agents/pricing-and-payments"
+    },
+    {
+      "source": "/agents/gateway",
+      "destination": "/agents/pricing-and-payments"
+    },
+    {
+      "source": "/guides/reports",
+      "destination": "/how-it-works"
+    },
+    {
+      "source": "/concepts/vault",
+      "destination": "/how-it-works"
+    },
+    {
+      "source": "/concepts/wallets-and-gas",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/resources/glossary",
+      "destination": "/resources/faq"
+    },
+    {
+      "source": "/safety/pauses-and-kill-switch",
+      "destination": "/safety/guarantees"
+    },
+    {
+      "source": "/safety/upgrades",
+      "destination": "/safety/guarantees"
+    },
+    {
+      "source": "/safety/disclosures",
+      "destination": "/safety/risks"
+    }
+  ]
 }

@@ -3,7 +3,7 @@ title: "Running costs"
 description: "Your bucket that pays for running your agents."
 ---
 
-Every paid call of your agents costs **compute units (CU)**. They are paid from your **running costs** bucket. The bucket is **your money**.
+Every paid call of your agents costs **compute units (CU)**, paid from your **running costs**. That money is yours until it is billed.
 
 **1,000,000 CU = 1.00 USDC.**
 
@@ -12,96 +12,34 @@ Every paid call of your agents costs **compute units (CU)**. They are paid from 
 | What the call does | CU |
 |---|---|
 | Runs | 200 |
-| Each started second it takes | 10 |
+| Each started second | 10 |
 | Each read of the blockchain | 20 (45 for a search of past events) |
 | Each web request | 20 |
 | Uses an OwnFlow AI model | The model's price plus 10% |
 | Is answered from the cache | 50 in total |
-| Fails | Nothing |
-| Is your own test | Nothing |
+| Fails, or is your own test | Nothing |
 
-A few examples of one call:
+Your agent's page shows what its paid calls cost on average. The rates can change; this page and the app's Terms show the current ones.
 
-| Agent | About |
-|---|---|
-| Swap Quote | 400 CU |
-| Price Snapshot | 900 CU |
-| Translator, short text, **Fast** model | 1,600 CU |
-| Translator, short text, **Default** model | 4,400 CU |
+## Billing
 
-These are examples. A longer text, or more tokens to read, costs more. Your agent's page shows what its paid calls cost on average.
+OwnFlow bills your vault each time **250,000 CU** (0.25 USDC) build up. When your running costs run out, it collects what is left from 100,000 CU.
 
-<Note>
-  The rates cover what running an agent costs OwnFlow, and they can change. This page and the app's Terms show the current ones.
-</Note>
+- A bill your running costs cannot pay stays owed, and the app shows **Bill due**.
+- At **500,000 CU** (0.50 USDC) unpaid, the app shows **Agents paused**. Callers are not charged.
+- Your agents start again once the bill is paid.
 
-## When you are billed
-
-OwnFlow bills your vault:
-
-- each time **250,000 CU** (0.25 USDC) have built up, or
-- when your running costs have run out, if at least **100,000 CU** can be collected.
-
-If your running costs cannot pay a bill, it stays owed and the app asks you to add money.
-
-## When your agents pause
-
-Before a call is accepted, OwnFlow checks that your vault can pay for it.
-
-- A vault may owe up to **500,000 CU** (0.50 USDC, two bills) beyond its bucket. So a new vault can start before its first income.
-- Beyond that, **all your agents** pause and answer that they are unavailable. **Their callers are not charged.**
-- They start again once the bill is paid from your running costs.
-
-## How much to set aside
-
-A new vault puts **20%** of every payment into running costs. Compare that share with what a call costs.
-
-**Example.** Your price is 0.005 USDC. 20% of it is 0.001 USDC, which is 1,000 CU for each call. If a call costs more than that, raise your price or your running costs share.
-
-The **Rules** page warns you when the share is below 20%.
-
-## Limits your vault enforces
-
-Your vault's contract enforces these limits by itself:
-
-- a bill is never larger than what is in the bucket,
-- the same cost is never billed twice,
-- the money goes only to the one address set when your vault was created,
-- you can take money out, or add money (from your wallet or your withdraw balance), at any time.
-
-<Note>
-  The blockchain cannot see what a call used. The count comes from OwnFlow's records, within the limits above. Every bill appears in your Activity and Report.
-</Note>
-
-## What you see
-
-On **Funds**, the running costs tile shows how far you are toward the next bill, for example "200k of 250k CU". The running costs card shows what is in the bucket and what is not billed yet.
-
-| Status | Meaning |
-|---|---|
-| Bill due | A bill of 0.25 USDC or more is due and your running costs cannot pay it |
-| Agents paused | 0.50 USDC is unpaid |
-
-Nothing is shown before a bill is due.
-
-**My agents** shows your compute cost in CU.
+This credit lets a new vault start before its first income.
 
 ## Add money
 
-On the running costs card choose **Add money**.
+On the running costs card, click **Add money**:
 
-<Steps>
-  <Step title="From your wallet">
-    You sign for the USDC, and it goes straight into your running costs. It is not income: no fee, and it stays yours.
-  </Step>
-  <Step title="From your withdraw balance">
-    This moves USDC inside your vault, with no fee.
-  </Step>
-  <Step title="Or from a payment">
-    Every split puts your running costs share in the bucket.
-  </Step>
-</Steps>
+- **From your wallet:** you sign, and the USDC goes straight into running costs. No fee.
+- **From your withdraw balance:** moves USDC inside your vault. No fee.
 
-<Note>
-  After you add money, give it a few seconds before you publish an agent. The service reads the balance again every few seconds.
-</Note>
+Each split also adds your running costs share. Compare that share with what a call costs: at a price of 0.005 USDC, 20% is 1,000 CU per call.
+
+## Limits
+
+Your vault never pays a bill larger than the bucket or the same cost twice, and bills go only to the address set when the vault was created. The blockchain cannot see what a call used, so the count comes from OwnFlow's records. Every bill appears in **Activity** and **Report**.

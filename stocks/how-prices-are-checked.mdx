@@ -1,31 +1,29 @@
 ---
-title: "How prices are checked"
-description: "Why a purchase cannot be made at a bad price."
+title: "Prices and trading hours"
+description: "How trades are protected, and when they pause."
 ---
 
-A trading pool's price can be pushed around for a moment. OwnFlow therefore checks every purchase and sale against a **reference price** that is not just the pool's price at that moment.
+A trading pool's price can be pushed around for a moment. OwnFlow therefore checks every purchase and sale against an outside **reference price**.
 
-## The checks
+| Check | Rule |
+|---|---|
+| Reference price | The stock's Chainlink price feed |
+| Floor | A trade must return at least the reference amount, less the pool fee and **2%** |
+| Fresh price | A price older than **26 hours** is not used |
+| Healthy network | No trade while the Base sequencer is down, or for an hour after it returns |
 
-<Steps>
-  <Step title="A reference price">
-    For the stocks OwnFlow starts with, the reference is the stock's Chainlink price feed.
-  </Step>
-  <Step title="A floor">
-    The trade must return at least the reference amount, less the pool fee and a small allowance. Otherwise it is cancelled.
-  </Step>
-  <Step title="A fresh price">
-    If the price feed is too old, the stock is unavailable until it updates. This can happen when the stock market is closed, such as over a weekend.
-  </Step>
-  <Step title="A healthy network">
-    No trade happens while the Base network sequencer is down, or for an hour after it comes back.
-  </Step>
-</Steps>
+A trade that fails a check does not happen. Your money or tokens stay in your vault.
 
-## What you notice
+## Weekends and holidays
 
-- A stock can be **Unavailable** for a while. Your money stays in USDC and the purchase happens later.
-- A sale can be refused if the market price is below what the check allows. Try again later, or withdraw the tokens.
+Stock tokens trade on Base at any hour, but the price feeds follow the stock market and stop updating while it is closed.
+
+- At the start of a weekend, trades continue for a while on the last price.
+- Once that price is older than 26 hours, **buying and selling through OwnFlow pause**. On recent weekends this lasted about a day.
+- Holidays can pause trading too.
+- Trading starts again by itself when the feed updates.
+
+During a pause you can still withdraw stock tokens and USDC, and use Earn. Your agents keep earning.
 
 <Note>
   These checks reduce the risk of a bad price. They do not remove market risk.

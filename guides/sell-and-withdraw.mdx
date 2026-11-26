@@ -1,57 +1,45 @@
 ---
-title: "Sell, withdraw and take everything out"
+title: "Sell and withdraw"
 description: "Get your money and stock out, in part or in full."
 ---
 
-You can always take your money and stock out. You do not need ETH for these actions.
+Only you can do these.
 
-## Withdraw USDC
+| Action | Where | Result |
+|---|---|---|
+| Withdraw USDC | **Funds** → **Withdraw to my wallet** | What is in **yours to withdraw** goes to your wallet |
+| Withdraw stock | **Overview** → **Withdraw** | The stock tokens go to your wallet |
+| Sell stock | **Overview** → **Sell** | The USDC goes to **yours to withdraw** |
 
-On **Funds**, choose **Withdraw to my wallet**. You can withdraw what is in **yours to withdraw**.
+## Sell stock
 
-## Withdraw stock
+Choose how much with the slider. Before you confirm, you see how many tokens you sell, about what they are worth, the **least** you accept and what stays.
 
-On **Overview**, find the stock and click **Withdraw**. Use the slider or the **25%**, **50%**, **75%** and **All** buttons. The stock tokens move to your wallet.
-
-## Sell stock for USDC
-
-On **Overview**, click **Sell** and choose how much with the slider. Before you confirm, you see:
-
-- how many tokens you sell,
-- about what they are worth,
-- the **least** you accept: the sale is refused if it would pay less,
-- how much stays in your vault.
-
-The USDC goes to **yours to withdraw**. Your agent cannot spend it. A sale is your own decision, never a recommendation, and has no OwnFlow fee.
-
-<Warning>
-  A sale pays the market price less the trading fee and the price impact. For a stock with a thin market this can be noticeable. When a stock cannot be priced safely, for example while its price feed is old, it cannot be sold through OwnFlow at that moment. You can still withdraw the tokens.
-</Warning>
+- A sale pays the market price less the trading fee and price impact.
+- A sale that would pay less than your minimum is refused.
+- Your agent cannot spend the money from a sale.
+- Sales can pause [around weekends](/stocks/how-prices-are-checked). Withdrawing the tokens still works.
 
 ## Take everything out
 
-In **Settings**, choose **Take everything out**. One signature does all of this, in order:
+In **Settings**, choose **Take everything out**. One signature does this in order:
 
 <Steps>
   <Step title="Pause your vault">
-    Your agent stops, so nothing changes while you leave.
+    Your agent stops.
   </Step>
   <Step title="Collect idle money">
-    Unspent stock money and unlent Earn money move to what you can withdraw.
+    Unspent stock and Earn money move to what you can withdraw.
   </Step>
   <Step title="Sell your stocks (optional)">
-    If you choose, the stocks in your basket are sold for USDC.
+    The stocks in your basket are sold for USDC.
   </Step>
   <Step title="Leave Earn">
-    Your Earn position is withdrawn if the lending vault can pay it right now. If it cannot pay all of it, it may pay a part or nothing: what stays remains yours in your vault, and you can withdraw it from the Earn card later.
+    As much of your position as the lending vault can pay now. The rest stays yours, to withdraw later.
   </Step>
   <Step title="Send it to you">
-    Your withdraw balance and running costs go to your wallet. If you choose, the remaining stocks do too.
+    Your USDC and running costs, and the remaining stocks if you choose.
   </Step>
 </Steps>
 
-If one part cannot be done (for example one stock cannot be sold), it is skipped and the rest goes on. You can **resume** your vault later with the same rules.
-
-<Note>
-  Take everything out covers the stocks in your current basket. A stock you hold that is no longer in your basket stays until you withdraw or sell it.
-</Note>
+A part that cannot be done is skipped. A stock that is no longer in your basket stays until you withdraw or sell it. You can resume your vault later.

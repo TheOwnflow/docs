@@ -1,53 +1,33 @@
 ---
-title: "The payment split"
-description: "How every payment is divided, and what each part is for."
+title: "Payment split"
+description: "How every payment is divided."
 ---
 
-Every payment your vault receives is divided into five parts. They always add up to **exactly 100%**.
+Every payment your vault receives is divided into five parts that add up to **exactly 100%**.
 
 | Part | What it is for | Starting value | Can you change it? |
 |---|---|---|---|
-| Platform fee | OwnFlow's fee | 1% | No, it is fixed when your vault is created |
+| Platform fee | OwnFlow's [fee](/concepts/fees) | 1% | No |
 | Running costs | Your agents' [compute units](/concepts/running-costs) | 20% | Yes |
-| Stock | Rule-based purchases | 50% | Yes |
-| Earn | Lent into an approved vault | 20% | Yes |
-| Yours to withdraw | Your own USDC | The rest (9%) | Yes |
+| Stock | [Rule-based purchases](/concepts/stock-baskets) | 50% | Yes |
+| Earn | [Lending](/concepts/earn) | 20% | Yes |
+| Yours to withdraw | Your own USDC | 9% | Yes |
 
-If no Earn vault is available on a network, Earn starts at 0% and that share stays with what you can withdraw.
+If no Earn vault is available, Earn starts at 0% and that share stays with what you can withdraw. Rounding remainders go there too.
 
 ## Change your split
 
-Open **Rules**. Move the sliders or use the minus and plus buttons. The summary at the top follows you as you scroll and shows:
+Open **Rules**, move the sliders to a total of 100%, click **Save allocation** and sign. The new split applies to payments split after that. The page warns you when running costs are below 20%.
 
-- **Adds up to 100%** when you can save,
-- **N% left** when some is not assigned yet,
-- **N% over** when you assigned too much.
-
-Click **Save allocation** and sign. The new split applies to payments split **after** that. Money already divided stays where it is.
-
-## When is a payment split?
-
-- Automatically, usually within a few minutes, once at least **1.00 USDC** is waiting.
-- At once, if anyone clicks **Split it now** on your pay page.
-- Not while your vault is paused. The money waits and is split after you resume.
-
-## Smallest amounts
+## When things happen
 
 Your agent waits until an amount is worth the transaction.
 
 | Step | Happens from |
 |---|---|
 | Splitting a payment | 1.00 USDC waiting |
-| Buying a stock | 0.50 USDC |
+| Buying a stock | 0.50 USDC for each stock |
 | Lending to Earn | 1.00 USDC set aside |
-| Billing running costs | 1,000,000 CU (1.00 USDC) built up, or 100,000 CU when the bucket has run out |
+| Billing running costs | 0.25 USDC of compute units |
 
-While money waits to be split, **Overview** says how much is waiting and why.
-
-## Rounding
-
-Amounts are worked out to the smallest unit of USDC. Any rounding remainder goes to **yours to withdraw**.
-
-<Warning>
-  The fee applies to **every** USDC your vault splits, including money you add yourself.
-</Warning>
+A split usually takes a few minutes. Anyone can also click **Split it now** on your pay page. Nothing is split while your vault is paused.
