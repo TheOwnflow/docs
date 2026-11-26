@@ -39,16 +39,18 @@ These are examples. A longer text, or more tokens to read, costs more. Your agen
 
 OwnFlow bills your vault:
 
-- once **1,000,000 CU** have built up, or
+- each time **250,000 CU** (0.25 USDC) have built up, or
 - when your running costs have run out, if at least **100,000 CU** can be collected.
 
-## When your agents switch off
+If your running costs cannot pay a bill, it stays owed and the app asks you to add money.
+
+## When your agents pause
 
 Before a call is accepted, OwnFlow checks that your vault can pay for it.
 
-- A vault may run up to **100,000 CU** (0.10 USDC) ahead of its bucket. So a new vault can start before its first income.
-- Beyond that, **all your agents** answer that they are unavailable. **Their callers are not charged.**
-- They start again once the bucket has money.
+- A vault may owe up to **500,000 CU** (0.50 USDC, two bills) beyond its bucket. So a new vault can start before its first income.
+- Beyond that, **all your agents** pause and answer that they are unavailable. **Their callers are not charged.**
+- They start again once the bill is paid from your running costs.
 
 ## How much to set aside
 
@@ -65,7 +67,7 @@ Your vault's contract enforces these limits by itself:
 - a bill is never larger than what is in the bucket,
 - the same cost is never billed twice,
 - the money goes only to the one address set when your vault was created,
-- you can take money out, or add money, at any time.
+- you can take money out, or add money (from your wallet or your withdraw balance), at any time.
 
 <Note>
   The blockchain cannot see what a call used. The count comes from OwnFlow's records, within the limits above. Every bill appears in your Activity and Report.
@@ -73,20 +75,27 @@ Your vault's contract enforces these limits by itself:
 
 ## What you see
 
-On **Funds**, the running costs tile shows how far you are toward the next bill, for example "450k of 1M CU". The running costs card shows what is in the bucket and what is not billed yet.
+On **Funds**, the running costs tile shows how far you are toward the next bill, for example "200k of 250k CU". The running costs card shows what is in the bucket and what is not billed yet.
 
 | Status | Meaning |
 |---|---|
-| Running low | Less than 0.20 USDC is left while costs are running |
-| Agents off | The vault cannot pay for another call |
+| Bill due | A bill of 0.25 USDC or more is due and your running costs cannot pay it |
+| Agents paused | 0.50 USDC is unpaid |
+
+Nothing is shown before a bill is due.
 
 **My agents** shows your compute cost in CU.
 
 ## Add money
 
+On the running costs card choose **Add money**.
+
 <Steps>
+  <Step title="From your wallet">
+    You sign for the USDC, and it goes straight into your running costs. It is not income: no fee, and it stays yours.
+  </Step>
   <Step title="From your withdraw balance">
-    On the running costs card choose **Add money**. This moves USDC inside your vault, with no fee.
+    This moves USDC inside your vault, with no fee.
   </Step>
   <Step title="Or from a payment">
     Every split puts your running costs share in the bucket.
