@@ -29,3 +29,19 @@ The **Earn** part of your split is set aside, then lent by your agent into a USD
 - You can withdraw from Earn at any time, even while your vault is paused. A lending vault may not have enough free money at a given moment. In that case try again later.
 - The card shows what is lent now, what is set aside, and what you earned so far. That number can be negative.
 - On the test network the Earn vault is a **disclosed simulation**.
+
+## Morpho
+
+Where real money is used, the Earn vaults are [Morpho](https://morpho.org) vaults, Vault V1 or V2. Each is run by its own curator. The Earn card links to the vault's page on Morpho, where you can see its yield, curator, fee and collateral.
+
+Before your first use, the app asks you to accept a notice: accessing the Morpho Protocol through OwnFlow is governed by OwnFlow's terms and [Morpho's Disclaimer](https://morpho.org/disclaimers/). OwnFlow is developed and operated separately from Morpho.
+
+### Risks
+
+| Risk | What it means |
+| --- | --- |
+| Smart contracts | A bug in Morpho's or OwnFlow's contracts can lose money. |
+| Market | What borrowers post as collateral can fall fast, and the loss can reach lenders. |
+| Curator | The vault's curator decides where the money is lent and can change it. |
+| Liquidity | When much of the money is borrowed, a withdrawal may have to wait. |
+| Price feeds | A wrong price from an oracle can cause a loss. |

@@ -3,7 +3,7 @@ title: "What OwnFlow can never do"
 description: "The rules your vault enforces by itself."
 ---
 
-These rules are in the smart contract, not just in the website.
+These rules are in the smart contract, not just in the website. They describe the vault code in use today; OwnFlow can release a new version of it, [with notice](/safety/upgrades).
 
 ## Your agent can never
 
@@ -13,9 +13,9 @@ These rules are in the smart contract, not just in the website.
 - spend anything except the stock bucket on purchases,
 - buy a stock you did not approve, or go past your maximum weight or daily limit,
 - send your Earn money anywhere except the approved vault,
-- bill more than your running costs bucket holds, or more than the daily limit, or the same cost twice.
+- bill more than your running costs bucket holds, or the same cost twice.
 
-## OwnFlow can never
+## With today's vault code, OwnFlow can never
 
 - withdraw your money or your stock,
 - change your split, your stock list or your settings,
@@ -28,6 +28,7 @@ These rules are in the smart contract, not just in the website.
 - Choose the trading pools and price sources the trading router uses. This decides what a purchase or a sale is checked against.
 - Approve which Earn vaults and trading routers may be used, and set the defaults for **new** vaults.
 - Set a deposit limit for vaults.
+- Release a new version of the vault code, after a waiting period, and switch every vault to [safe mode](/safety/upgrades) in an emergency.
 
 If a trading router is withdrawn, vaults that use it stop buying and selling through it. Your money and stock stay yours and you can withdraw them.
 

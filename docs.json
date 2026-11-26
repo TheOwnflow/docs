@@ -94,6 +94,7 @@
         "pages": [
           "safety/guarantees",
           "safety/pauses-and-kill-switch",
+          "safety/upgrades",
           "safety/risks",
           "safety/disclosures"
         ]
