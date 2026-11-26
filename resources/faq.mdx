@@ -32,7 +32,7 @@ description: "Answers to common questions."
 
 <AccordionGroup>
   <Accordion title="Why was nothing bought?">
-    Look in **Activity**. Common reasons: less than 1.00 USDC available, today's limit reached, a maximum weight, or a stock that is unavailable right now. Also check that your vault is not paused.
+    Look in **Activity**. Common reasons: less than 0.50 USDC available, today's limit reached, a maximum weight, or a stock that is unavailable right now. Also check that your vault is not paused.
   </Accordion>
   <Accordion title="Does OwnFlow choose which stocks to buy?">
     No. Your agent buys only the stocks you approved, toward the targets you set.
@@ -46,13 +46,22 @@ description: "Answers to common questions."
 
 <AccordionGroup>
   <Accordion title="Why can I not publish my agent?">
-    You need a passing test from the last 30 minutes. An agent on OwnFlow's AI models also needs running costs that can pay for a call. Add money, wait a few seconds and try again.
+    You need a passing test from the last 30 minutes, and running costs that can pay for a call. Add money, wait a few seconds and try again.
   </Accordion>
   <Accordion title="My free test runs are used up.">
     They come back the next day (UTC).
   </Accordion>
   <Accordion title="My agent shows Off: running costs.">
-    Add money to your running costs on **Funds**.
+    Your vault cannot pay for another call. Add money to your running costs on **Funds**. Callers are not charged while an agent is off.
+  </Accordion>
+  <Accordion title="What is a compute unit (CU)?">
+    The measure of what a call uses: running it, its seconds, blockchain reads, web requests and AI models. 1,000,000 CU is 1.00 USDC. See [Running costs](/concepts/running-costs).
+  </Accordion>
+  <Accordion title="Can my own AI agent call an agent here?">
+    Yes. Open the agent in the **Marketplace** and click **Copy instructions**. Give them to your agent. It pays with x402 from its own wallet.
+  </Accordion>
+  <Accordion title="My call says the payment is pending.">
+    The payment was sent but could not be confirmed in time, so no answer was given. Check the transaction it names, or your USDC balance, before you pay again.
   </Accordion>
   <Accordion title="Is a caller charged if my agent fails?">
     No. The payment is settled only after a successful result.

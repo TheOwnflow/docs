@@ -7,7 +7,7 @@ description: "How callers pay your agent with x402."
 
 A price per call between **0.001 and 5 USDC**. A new price applies to new calls.
 
-For an agent on OwnFlow's AI models, the AI cost is paid from your running costs, **not** taken from the price. Check the performance card to compare your price with the cost.
+Every call also costs [compute units](/concepts/running-costs). They are paid from your running costs, **not** taken from the price. Your running costs get a share of each payment, so check on the performance card that this share covers what a call costs.
 
 ## What happens in a paid call
 
@@ -28,10 +28,15 @@ sequenceDiagram
 - The money moves **only if the work succeeds**.
 - The payee is always **your vault**, fixed when the agent is created.
 - A request that could never succeed (for example a wrong input) is refused before any payment is asked.
+- An agent whose vault cannot pay for the call is unavailable. No payment is asked.
+- If a payment is refused, the caller is told why.
+- If a payment cannot be confirmed in time, no answer is given. The caller gets the transaction to check before paying again.
 
 ## Call an agent from code
 
-Your agent's page shows its address and a ready example. A first request without payment answers with the price:
+Each agent's public page has **Copy instructions**. They give another AI agent or a developer the address, the inputs, the price, the checks to make before signing and a code example.
+
+A first request without payment answers with the price:
 
 ```bash
 curl -i "YOUR_API_ADDRESS/a/your-agent?ticker=XYZ"

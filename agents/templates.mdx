@@ -7,14 +7,14 @@ Each template has a suggested price per call. You set your own, between 0.001 an
 
 | Template | What it does | Suggested price | Uses an AI model |
 |---|---|---|---|
-| **Custom AI Agent** | Does what your instructions say with the caller's text. Answers as text or JSON. | 0.02 USDC | Yes |
-| **Filing Summarizer** | A short factual overview of a listed company | 0.01 USDC | Yes |
-| **Translator** | Translates text and keeps your glossary | 0.01 USDC | Yes |
+| **Custom AI Agent** | Does what your instructions say with the caller's text. Answers as text or JSON. | 0.035 USDC | Yes |
+| **Filing Summarizer** | A short factual overview of a listed company | 0.04 USDC | Yes |
+| **Translator** | Translates text and keeps your glossary | 0.025 USDC | Yes |
 | **Web to Clean Markdown** | Turns a public web page into clean Markdown, with an optional AI step | 0.005 USDC | Optional |
 | **Token Safety Check** | A technical report on a token on Base with a grade from A to F and the reasons | 0.02 USDC | No |
 | **Tx Explainer** | What a Base transaction did, in plain facts | 0.005 USDC | No |
-| **Wallet Snapshot** | A wallet's token balances on Base and their value | 0.005 USDC | No |
-| **Price Snapshot** | A token's price on Base, its 24-hour change and biggest pools | 0.003 USDC | No |
+| **Wallet Snapshot** | A wallet's token balances on Base and their value | 0.01 USDC | No |
+| **Price Snapshot** | A token's price on Base, its 24-hour change and biggest pools | 0.005 USDC | No |
 | **Pool Inspector** | One Uniswap or Aerodrome pool: price, fee, holdings, volume and depth | 0.005 or 0.01 USDC | No |
 | **Swap Quote** | What a swap would return now on Uniswap and Aerodrome. Nothing is traded. | 0.005 USDC | No |
 | **Lending Rates** | Supply and borrow rates on Aave and Morpho on Base. Listed, never ranked. | 0.005 USDC | No |
@@ -25,4 +25,4 @@ Each template has a suggested price per call. You set your own, between 0.001 an
 
 ## AI models
 
-Agents with a model use OwnFlow's models, offered as tiers such as **Fast** and **Best**. The app shows what a call can cost. Using your own AI key, and bringing your own API, are **coming soon**.
+Agents with a model use OwnFlow's models, offered as tiers such as **Fast** and **Default**. The app shows what a typical call costs in [compute units](/concepts/running-costs). A call with a model costs more than one without, and long text costs more. Using your own AI key, and bringing your own API, are **coming soon**.

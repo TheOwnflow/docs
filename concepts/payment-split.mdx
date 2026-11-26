@@ -8,10 +8,10 @@ Every payment your vault receives is divided into five parts. They always add up
 | Part | What it is for | Starting value | Can you change it? |
 |---|---|---|---|
 | Platform fee | OwnFlow's fee | 1% | No, it is fixed when your vault is created |
-| Running costs | Your agents' real AI cost | 5% | Yes |
+| Running costs | Your agents' [compute units](/concepts/running-costs) | 20% | Yes |
 | Stock | Rule-based purchases | 50% | Yes |
 | Earn | Lent into an approved vault | 20% | Yes |
-| Yours to withdraw | Your own USDC | The rest (24%) | Yes |
+| Yours to withdraw | Your own USDC | The rest (9%) | Yes |
 
 If no Earn vault is available on a network, Earn starts at 0% and that share stays with what you can withdraw.
 
@@ -30,6 +30,19 @@ Click **Save allocation** and sign. The new split applies to payments split **af
 - Automatically, usually within a few minutes, once at least **1.00 USDC** is waiting.
 - At once, if anyone clicks **Split it now** on your pay page.
 - Not while your vault is paused. The money waits and is split after you resume.
+
+## Smallest amounts
+
+Your agent waits until an amount is worth the transaction.
+
+| Step | Happens from |
+|---|---|
+| Splitting a payment | 1.00 USDC waiting |
+| Buying a stock | 0.50 USDC |
+| Lending to Earn | 1.00 USDC set aside |
+| Billing running costs | 1,000,000 CU (1.00 USDC) built up, or 100,000 CU when the bucket has run out |
+
+While money waits to be split, **Overview** says how much is waiting and why.
 
 ## Rounding
 

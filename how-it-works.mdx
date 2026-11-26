@@ -24,7 +24,7 @@ flowchart LR
   F --> I[Rule-based purchase]
   I --> B
   G --> J[Approved Earn vault]
-  E --> K[Your agents' real AI cost]
+  E --> K[Your agents' compute units]
 ```
 
 <Steps>
@@ -64,7 +64,7 @@ OwnFlow **fails safe**. If a market is closed, a stock is paused, a price looks 
 | Split a payment | Yes (anyone can) | Yes | No |
 | Buy a stock inside your rules | No | Yes | No |
 | Lend your Earn share into an approved vault | No | Yes | No |
-| Bill your agents' real AI cost, within limits | No | Yes | No |
+| Bill your agents' compute units, within limits | No | Yes | No |
 | Stop all agents' actions in an emergency | No | No | Yes, only stop |
 
 OwnFlow can stop agent actions in an emergency, but it can never stop **you** from taking your money out.
